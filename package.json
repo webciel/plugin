@@ -1,0 +1,61 @@
+{
+  "name": "webciel-plugin",
+  "version": "0.0.0",
+  "description": "A lightweight plugin system for modular HTML, JS, and i18n injection — perfect for browser extensions and embeddable UIs.",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "build": "npm run clean && echo Using TypeScript && npx tsc --version && npx tsc --build && npx tsc-alias",
+    "build:add": "npm run build && git add .",
+    "clean": "npx rimraf dist",
+    "major-release": "npm run build:add && git commit -m '[major-release]' && git push --force-with-lease && npm version major && npm publish --access public && git push",
+    "major-release-candidate": "npm run build:add && git commit -m '[major-release-candidate]' && git push --force-with-lease && npm version premajor --preid rc && npm publish --access public --tag beta && git push",
+    "minor-release": "npm run build:add && git commit -m '[minor-release]' && git push --force-with-lease && npm version minor && npm publish --access public && git push",
+    "minor-release-candidate": "npm run build:add && git commit -m '[minor-release-candidate]' && git push --force-with-lease && npm version preminor -preid rc && npm publish --access public --tag beta && git push",
+    "next-release-candidate": "npm run build:add && git commit -m '[next-release-candidate]' && git push --force-with-lease && npm version prerelease --preid rc && npm publish --access public --tag beta && git push",
+    "patch-release": "npm run build:add && git commit -m '[patch-release]' && git push --force-with-lease && npm version patch && npm publish --access public && git push",
+    "patch-release-candidate": "npm run build:add && git commit -m '[patch-release-candidate]' && git push --force-with-lease && npm version prepatch --preid rc && npm publish --access public --tag beta && git push",
+    "pre-release": "npm run build:add && git commit -m '[pre-release]' && git push --force-with-lease && npm version prerelease --preid rc && npm publish --access public --tag beta && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webciel/plugin.git"
+  },
+  "keywords": [
+    "plugin",
+    "modular",
+    "html",
+    "javascript",
+    "dynamic",
+    "loader",
+    "template",
+    "component",
+    "lifecycle",
+    "onMount",
+    "i18n",
+    "translation",
+    "chrome-extension",
+    "web-extension",
+    "ui-framework",
+    "micro-framework",
+    "frontend",
+    "webciel"
+  ],
+  "author": "alexis-piquet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webciel/plugin/issues"
+  },
+  "homepage": "https://github.com/webciel/plugin#readme",
+  "dependencies": {
+    "feather-icons": "^4.29.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.1",
+    "@types/feather-icons": "^4.29.4",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.8.3"
+  }
+}
