@@ -11,13 +11,8 @@
     "build:add": "npm run build && git add .",
     "clean": "npx rimraf dist",
     "major-release": "npm run build:add && git commit -m '[major-release]' && git push --force-with-lease && npm version major && npm publish --access public && git push",
-    "major-release-candidate": "npm run build:add && git commit -m '[major-release-candidate]' && git push --force-with-lease && npm version premajor --preid rc && npm publish --access public --tag beta && git push",
     "minor-release": "npm run build:add && git commit -m '[minor-release]' && git push --force-with-lease && npm version minor && npm publish --access public && git push",
-    "minor-release-candidate": "npm run build:add && git commit -m '[minor-release-candidate]' && git push --force-with-lease && npm version preminor -preid rc && npm publish --access public --tag beta && git push",
-    "next-release-candidate": "npm run build:add && git commit -m '[next-release-candidate]' && git push --force-with-lease && npm version prerelease --preid rc && npm publish --access public --tag beta && git push",
-    "patch-release": "npm run build:add && git commit -m '[patch-release]' && git push --force-with-lease && npm version patch && npm publish --access public && git push",
-    "patch-release-candidate": "npm run build:add && git commit -m '[patch-release-candidate]' && git push --force-with-lease && npm version prepatch --preid rc && npm publish --access public --tag beta && git push",
-    "pre-release": "npm run build:add && git commit -m '[pre-release]' && git push --force-with-lease && npm version prerelease --preid rc && npm publish --access public --tag beta && git push"
+    "patch-release": "npm run build:add && git commit -m '[patch-release]' && git push --force-with-lease && npm version patch && npm publish --access public && git push"
   },
   "repository": {
     "type": "git",

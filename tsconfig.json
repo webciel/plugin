@@ -1,5 +1,5 @@
 {
-  "compilerOptions": { 
+  "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
